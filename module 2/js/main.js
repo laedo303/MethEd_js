@@ -1,14 +1,32 @@
 'use strict';
-document.querySelector('.ads').remove();
-const item = document.querySelectorAll('.item');
-const propsList = document.querySelectorAll('.props__list');
-const content = document.querySelectorAll('.content');
-const propsItemTwo = document.querySelectorAll('.props__item_two');
-const propsItemFour = document.querySelectorAll('.props__item_four');
-const clonePropsItemFive = propsList[4].cloneNode(true);
-item[3].after(item[0]);
-propsItemFour[2].after(propsItemFour[5]);
-propsItemTwo[7].after(propsItemTwo[8]);
-propsItemTwo[8].after(propsItemTwo[9]);
-propsList[4].replaceWith(propsList[3]);
-content[3].append(clonePropsItemFive);
+
+const addElem = () =>{
+  const ulList = document.querySelector('.list');
+
+  return function addText() {
+    const userText = prompt('input text:');
+
+    if(userText === null) return;
+    if(userText === '') return addText();
+    if(userText === undefined) return;
+    if(userText === 'exit') return;
+    if(userText.length === 0) return;
+    if(userText === 'del') {
+      ulList.removeChild(ulList.lastChild);
+      return addText();
+    }
+
+    else {
+      const liElem = document.createElement('li');
+
+
+      liElem.textContent = userText;
+      ulList.append(liElem);
+      addText();
+    };
+
+  }
+};
+
+const list = addElem();
+console.log('list: ', list());
