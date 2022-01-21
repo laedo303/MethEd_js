@@ -1,0 +1,14 @@
+'use strict';
+document.querySelector('.ads').remove();
+const item = document.querySelectorAll('.item');
+const propsList = document.querySelectorAll('.props__list');
+const content = document.querySelectorAll('.content');
+const propsItemTwo = document.querySelectorAll('.props__item_two');
+const propsItemFour = document.querySelectorAll('.props__item_four');
+const clonePropsItemFive = propsList[4].cloneNode(true);
+item[3].after(item[0]);
+propsItemFour[2].after(propsItemFour[5]);
+propsItemTwo[7].after(propsItemTwo[8]);
+propsItemTwo[8].after(propsItemTwo[9]);
+propsList[4].replaceWith(propsList[3]);
+content[3].append(clonePropsItemFive);
