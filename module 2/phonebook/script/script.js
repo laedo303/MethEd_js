@@ -22,7 +22,6 @@ const data = [
     phone: '+79876543210',
   },
 ];
-
 {
   const createContainer = () => {
     const container = document.createElement('div');
@@ -205,6 +204,7 @@ const data = [
       list: table.tbody,
       logo,
       btnAdd: buttonGroup.btns[0],
+      btnDel: buttonGroup.btns[1],
       formOverLay: form.overlay,
       form: form.form,
 
@@ -213,6 +213,7 @@ const data = [
 
   const createRow = ({name: firstName, surname, phone}) => {
     const tr = document.createElement('tr');
+    tr.classList.add('contact');
 
     const tdDel = document.createElement('td');
     tdDel.classList.add('delete');
@@ -245,7 +246,6 @@ const data = [
     return tr;
   };
 
-  //
   const renderContacts = (elem, data) => {
     const allRow = data.map(createRow);
     elem.append(...allRow);
@@ -268,7 +268,7 @@ const data = [
     const app = document.querySelector(selectorApp);
     const phoneBook = renderPhoneBook(app, title);
 
-    const { list, logo, btnAdd, formOverLay, form } = phoneBook;
+    const {list, logo, btnAdd, formOverLay, form, btnDel} = phoneBook;
 
     // Функционал
     const allRow = renderContacts(list, data);
@@ -279,17 +279,25 @@ const data = [
       formOverLay.classList.add('is-visible');
     });
 
-    form.addEventListener('click', event => {
-      event.stopPropagation();
+    formOverLay.addEventListener('click', e => {
+      const target = e.target;
+      if(target === formOverLay || target.closest('.close')) {
+        formOverLay.classList.remove('is-visible');
+
+      }
     });
 
-    formOverLay.addEventListener('click', () => {
-      formOverLay.classList.remove('is-visible');
+    btnDel.addEventListener('click', () => {
+      document.querySelectorAll('.delete').forEach(del => {
+        del.classList.toggle('is-visible');
+      });
     });
 
-    document.querySelector('.close').addEventListener('click', () => {
-      formOverLay.classList.remove('is-visible');
-    });;
+    list.addEventListener('click', e => {
+      if (e.target.closest('.del-icon')) {
+        e.target.closest('.contact').remove();
+      }
+    });
 
   };
 
