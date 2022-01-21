@@ -237,7 +237,7 @@ const data = [
     const tdEdit = document.createElement('td');
     tdEdit.classList.add('td-edit');
     const buttonEdit = document.createElement('button');
-    buttonEdit.classList.add('del-icon');
+    buttonEdit.classList.add('edit-icon');
     tdEdit.append(buttonEdit);
 
     tr.append(tdDel, tdName, tdSurname, tdPhone, tdEdit);
