@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>lesson 10</title>
+  <!-- <script src="cart.js"></script> -->
+  <!-- <script src="listIPv4.js"></script> -->
+</head>
+
+<body>
+  <h1>Lesson 10</h1>
+  <p>
+    Задание 1<br>
+    Продолжим работу с cart.js<br>
+    Обнаружена уязвимость в нашем функционале<br>
+    Если после добавления последнего товара присвоить к totalPrice любое значение,<br>
+    например<br>
+    cart.totalPrice = 10;<br>
+    то при выводе print() общая стоимость корзины будет равна 10<br>
+    Чтобы это предотвратить, необходимо свойство totalPrice сделать геттером<br>
+    который будет возвращать результат вызова метода calculateItemPrice<br>
+    метод getTotalPrice больше не нужен<br>
+    calculateItemPrice переделать таким образом, чтобы сумму он возвращал, а не записывал в свойство totalPrice<br>
+    Вызов метода calculateItemPrice оставить только у геттера totalPrice<br>
+  </p>
+  <p>
+    Задание 2<br>
+    Вам дан список ip-адресов - IPv4<br>
+    задача: написать функцию, которая будет возвращать число равное количеству уникальных ip-адресов<br>
+  </p>
+</body>
+
+</html>
