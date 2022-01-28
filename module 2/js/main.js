@@ -15,17 +15,35 @@ const addElem = () =>{
       ulList.removeChild(ulList.lastChild);
       return addText();
     }
-
     else {
       const liElem = document.createElement('li');
-
-
       liElem.textContent = userText;
       ulList.append(liElem);
       addText();
     };
 
-  }
+  //   switch (userText) {
+  //     case null:
+  //       return;
+  //     case '':
+  //       return addText();
+  //     case undefined:
+  //       return;
+  //     case 'exit':
+  //       return;
+  //     case 0:
+  //       return;
+  //     case 'del':
+  //       ulList.removeChild(ulList.lastChild);
+  //       return addText();
+  //     default:
+  //       const liElem = document.createElement('li');
+  //       liElem.textContent = userText;
+  //       ulList.append(liElem);
+  //       addText();
+  //   }
+
+  // }
 };
 
 const list = addElem();

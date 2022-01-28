@@ -1,4 +1,5 @@
-const data = [
+'use strict';
+[
   {
     name: 'Иван',
     surname: 'Петров',
