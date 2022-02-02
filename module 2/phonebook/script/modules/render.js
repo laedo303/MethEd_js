@@ -17,8 +17,6 @@ const renderPhoneBook = (app, title) => {
   const header = createHeader();
   const logo = createlogo(title);
   const main = createMain();
-  const footer = createFooter();
-  const FooterLogo = createFooterLogo(title);
   const buttonGroup = crerateButtonsGroup([
     {
       className: 'btn btn-primary mr-3 js-add',
@@ -33,6 +31,9 @@ const renderPhoneBook = (app, title) => {
   ]);
   const table = createTable();
   const {form, overlay} = createForm();
+  const footer = createFooter();
+  const FooterLogo = createFooterLogo(title);
+
 
   header.headerContainer.append(logo);
   main.mainContainer.append(buttonGroup.btnWrapper, table, overlay);
