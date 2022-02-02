@@ -1,14 +1,13 @@
-'use strict';
-
-
+import createElements from './createElementsjs';
 const {
   createRow,
-} = require('./createElements');
+} = createElements;
 
+import serviceStorage from './modules/serviceStorage.js';
 const {
   addContactData,
   removeContactData,
-} = require('./serviceStorage');
+} = serviceStorage;
 
 
 const howerRow = (allRow, logo) => {
@@ -78,7 +77,7 @@ const formControl = (form, list, closeModal) => {
   });
 };
 
-module.exports = {
+export default {
   howerRow,
   modalControl,
   deleteControl,

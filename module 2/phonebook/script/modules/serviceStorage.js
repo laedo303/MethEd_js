@@ -1,6 +1,3 @@
-'use strict';
-
-
 const getContactData = () => (localStorage.getItem('phoneBook') ?
   JSON.parse(localStorage.getItem('phoneBook')) : []);
 
@@ -19,7 +16,7 @@ const removeContactData = phone => {
   setContactData(newData);
 };
 
-module.exports = {
+export default {
   getContactData,
   setContactData,
   addContactData,

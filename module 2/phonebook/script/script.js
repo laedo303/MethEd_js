@@ -1,22 +1,21 @@
-'use strict';
-
-
+import control from './modules/control.js';
 const {
   howerRow,
   modalControl,
   deleteControl,
   formControl,
-} = require('./modules/control');
+} = control;
 
-
+import render from './modules/render.js';
 const {
   renderPhoneBook,
   renderContacts,
-} = require('./modules/render');
+} = render;
 
+import serviceStorage from './modules/serviceStorage.js';
 const {
   getContactData,
-} = require('./modules/serviceStorage');
+} = serviceStorage;
 
 {
   const init = (selectorApp, title) => {
