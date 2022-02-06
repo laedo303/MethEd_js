@@ -1,9 +1,9 @@
-import createElements from './createElementsjs';
+import createElements from './createElements.js';
 const {
   createRow,
 } = createElements;
 
-import serviceStorage from './modules/serviceStorage.js';
+import serviceStorage from './serviceStorage.js';
 const {
   addContactData,
   removeContactData,
