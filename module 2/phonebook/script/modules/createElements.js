@@ -1,6 +1,6 @@
 const createContainer = () => {
   const container = document.createElement('div');
-  container.classList.add('conainer');
+  container.classList.add('container');
   return container;
 };
 
