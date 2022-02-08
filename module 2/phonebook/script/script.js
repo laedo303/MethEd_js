@@ -1,3 +1,4 @@
+import data from '../../data.js';
 import control from './modules/control.js';
 const {
   howerRow,
@@ -12,15 +13,10 @@ const {
   renderContacts,
 } = render;
 
-import serviceStorage from './modules/serviceStorage.js';
-const {
-  getContactData,
-} = serviceStorage;
 
 {
   const init = (selectorApp, title) => {
     const app = document.querySelector(selectorApp);
-    const data = getContactData();
     const {
       list,
       logo,
