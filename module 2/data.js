@@ -1,5 +1,4 @@
-'use strict';
-[
+const data = [
   {
     name: 'Иван',
     surname: 'Петров',
@@ -21,3 +20,5 @@
     phone: '+79876543210',
   },
 ];
+
+export default data;
