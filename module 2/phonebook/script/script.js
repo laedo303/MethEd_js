@@ -5,6 +5,7 @@ const {
   modalControl,
   deleteControl,
   formControl,
+  addContactPageFromLocal,
 } = control;
 
 import render from './modules/render.js';
@@ -28,6 +29,7 @@ const {
 
     // Функционал
     const allRow = renderContacts(list, data);
+    addContactPageFromLocal(list);
     const {closeModal} = modalControl(btnAdd, formOverLay);
 
     howerRow(allRow, logo);

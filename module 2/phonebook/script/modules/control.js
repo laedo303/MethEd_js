@@ -6,7 +6,9 @@ const {
 import serviceStorage from './serviceStorage.js';
 const {
   addContactData,
-  removeContactData,
+  getContactData,
+  // removeContactData,
+  removeStorage,
 } = serviceStorage;
 
 
@@ -54,8 +56,18 @@ const deleteControl = (btnDel, list) => {
 
   list.addEventListener('click', e => {
     if (e.target.closest('.del-icon')) {
+      const tr = e.target.closest('tr');
+      const firstname = tr.querySelector('td:nth-child(2)').textContent;
+      const surname = tr.querySelector('td:nth-child(3)').textContent;
+      const number = tr.querySelector('td:nth-child(4)').textContent;
+
+      const contact = {
+        name: firstname,
+        surname,
+        phone: number,
+      };
+      removeStorage('phoneBook', contact);
       e.target.closest('.contact').remove();
-      removeContactData();
     }
   });
 };
@@ -64,14 +76,32 @@ const addContactPage = (contact, list) => {
   list.append(createRow(contact));
 };
 
+const addContactPageFromLocal = (list) => {
+  let contacts = [];
+  if (localStorage.length > 0) {
+    contacts = JSON.parse(localStorage.getItem('phoneBook'));
+    const allRow = contacts.map(createRow);
+    list.append(...allRow);
+    return allRow;
+  } else {
+    return;
+  }
+};
+
+// const remove
+
 const formControl = (form, list, closeModal) => {
   form.addEventListener('submit', e => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const newContact = Object.fromEntries(formData);
 
+    getContactData(newContact.phone);
     addContactPage(newContact, list);
-    addContactData(newContact);
+    addContactData('phoneBook', newContact);
+
+    // removeContactData(newContact.phone);
+
     form.reset();
     closeModal();
   });
@@ -82,4 +112,5 @@ export default {
   modalControl,
   deleteControl,
   formControl,
+  addContactPageFromLocal,
 };
