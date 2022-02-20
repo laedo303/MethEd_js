@@ -5,7 +5,6 @@ const {
   createRow,
 } = require('./createElements');
 
-
 const {
   addContactData,
   removeContactData,
@@ -83,6 +82,5 @@ module.exports = {
   howerRow,
   modalControl,
   deleteControl,
-  addContactPage,
   formControl,
 };
