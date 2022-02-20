@@ -8,13 +8,15 @@ const {
   createForm,
   createFooter,
   createFooterLogo,
-  createRow,
 } = createElements;
 
 const renderPhoneBook = (app, title) => {
   const header = createHeader();
   const logo = createlogo(title);
   const main = createMain();
+  const footer = createFooter();
+  const FooterLogo = createFooterLogo(title);
+
   const buttonGroup = crerateButtonsGroup([
     {
       className: 'btn btn-primary mr-3 js-add',
@@ -27,14 +29,12 @@ const renderPhoneBook = (app, title) => {
       text: 'Удалить',
     },
   ]);
-  const table = createTable();
-  const {form, overlay} = createForm();
-  const footer = createFooter();
-  const FooterLogo = createFooterLogo(title);
 
+  const table = createTable();
+  const form = createForm();
 
   header.headerContainer.append(logo);
-  main.mainContainer.append(buttonGroup.btnWrapper, table, overlay);
+  main.mainContainer.append(buttonGroup.btnWrapper, table, form.overlay);
   footer.footerContainer.append(FooterLogo);
   app.append(header, main, footer);
 
@@ -43,19 +43,9 @@ const renderPhoneBook = (app, title) => {
     logo,
     btnAdd: buttonGroup.btns[0],
     btnDel: buttonGroup.btns[1],
-    formOverLay: overlay,
-    form,
-
+    formOverLay: form.overlay,
+    form: form.form,
   };
 };
 
-const renderContacts = (elem, data) => {
-  const allRow = data.map(createRow);
-  elem.append(...allRow);
-  return allRow;
-};
-
-export default {
-  renderPhoneBook,
-  renderContacts,
-};
+export default renderPhoneBook;
