@@ -1,8 +1,6 @@
-'use strict';
-
 const createContainer = () => {
   const container = document.createElement('div');
-  container.classList.add('conainer');
+  container.classList.add('container');
   return container;
 };
 
@@ -61,14 +59,16 @@ const createTable = () => {
 
   const thead = document.createElement('thead');
   thead.insertAdjacentHTML('beforeend', `
-    <tr>
-      <th class="delete">Удалить</th>
-      <th>Имя</th>
-      <th>Фамилия</th>
-      <th>Телефон</th>
-    </tr>
-  `);
+      <tr>
+        <th class="delete">Удалить</th>
+        <th>Имя</th>
+        <th>Фамилия</th>
+        <th>Телефон</th>
+      </tr>
+    `);
+
   const tbody = document.createElement('tbody');
+
   table.append(thead, tbody);
   table.tbody = tbody;
 
@@ -83,24 +83,24 @@ const createForm = () => {
   form.classList.add('form');
 
   form.insertAdjacentHTML('beforeend', `
-    <button class="close" type="button"></button>
-    <h2 class="form-title">Добавить контакт</h2>
-    <div class="form-group">
-      <label class="form-label" for="name">Имя:</label>
-      <input class="form-input" name="name"
-        id="name" type="text" required>
-    </div>
-    <div class="form-group">
-      <label class="form-label" for="surname">Фамилия:</label>
-      <input class="form-input" name="surname"
-        id="surname" type="text" required>
-    </div>
-    <div class="form-group">
-      <label class="form-label" for="phone">Телефон:</label>
-      <input class="form-input" name="phone"
-        id="phone" type="number" required>
-    </div>
-  `);
+      <button class="close" type="button"></button>
+      <h2 class="form-title">Добавить контакт</h2>
+      <div class="form-group">
+        <label class="form-label" for="name">Имя:</label>
+        <input class="form-input" name="name"
+          id="name" type="text" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="surname">Фамилия:</label>
+        <input class="form-input" name="surname"
+          id="surname" type="text" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="phone">Телефон:</label>
+        <input class="form-input" name="phone"
+          id="phone" type="number" required>
+      </div>
+    `);
 
   const buttonGroup = crerateButtonsGroup([
     {
@@ -136,6 +136,7 @@ const createFooter = () => {
 
   return footer;
 };
+
 const createFooterLogo = title => {
   const h2 = document.createElement('h2');
   h2.classList.add('footer');
@@ -144,7 +145,7 @@ const createFooterLogo = title => {
   return h2;
 };
 
-const createRow = ({name: firstName, surname, phone}) => {
+const createRow = ({name, surname, phone}) => {
   const tr = document.createElement('tr');
   tr.classList.add('contact');
 
@@ -155,7 +156,7 @@ const createRow = ({name: firstName, surname, phone}) => {
   tdDel.append(buttonDel);
 
   const tdName = document.createElement('td');
-  tdName.textContent = firstName;
+  tdName.textContent = name;
 
   const tdSurname = document.createElement('td');
   tdSurname.textContent = surname;
@@ -179,7 +180,8 @@ const createRow = ({name: firstName, surname, phone}) => {
   return tr;
 };
 
-module.exports = {
+
+export default {
   createContainer,
   createHeader,
   createlogo,
