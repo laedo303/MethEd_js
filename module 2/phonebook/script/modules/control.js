@@ -3,6 +3,7 @@ const {
   createRow,
 } = createElements;
 
+
 import serviceStorage from './serviceStorage.js';
 const {
   addContactData,
@@ -21,6 +22,7 @@ const howerRow = (allRow, logo) => {
     });
   });
 };
+
 
 const modalControl = (btnAdd, formOverLay) => {
   const openModal = () => {
@@ -45,6 +47,7 @@ const modalControl = (btnAdd, formOverLay) => {
   };
 };
 
+
 const deleteControl = (btnDel, list) => {
   btnDel.addEventListener('click', () => {
     document.querySelectorAll('.delete').forEach(del => {
@@ -60,9 +63,11 @@ const deleteControl = (btnDel, list) => {
   });
 };
 
+
 const addContactPage = (contact, list) => {
   list.append(createRow(contact));
 };
+
 
 const formControl = (form, list, closeModal) => {
   form.addEventListener('submit', e => {
@@ -76,6 +81,7 @@ const formControl = (form, list, closeModal) => {
     closeModal();
   });
 };
+
 
 export default {
   howerRow,

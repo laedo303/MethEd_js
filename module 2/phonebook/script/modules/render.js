@@ -11,6 +11,7 @@ const {
   createRow,
 } = createElements;
 
+
 const renderPhoneBook = (app, title) => {
   const header = createHeader();
   const logo = createlogo(title);
@@ -32,7 +33,6 @@ const renderPhoneBook = (app, title) => {
   const footer = createFooter();
   const FooterLogo = createFooterLogo(title);
 
-
   header.headerContainer.append(logo);
   main.mainContainer.append(buttonGroup.btnWrapper, table, overlay);
   footer.footerContainer.append(FooterLogo);
@@ -49,11 +49,13 @@ const renderPhoneBook = (app, title) => {
   };
 };
 
+
 const renderContacts = (elem, data) => {
   const allRow = data.map(createRow);
   elem.append(...allRow);
   return allRow;
 };
+
 
 export default {
   renderPhoneBook,

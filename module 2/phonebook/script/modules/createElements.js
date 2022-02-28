@@ -4,6 +4,7 @@ const createContainer = () => {
   return container;
 };
 
+
 const createHeader = () => {
   const header = document.createElement('header');
   header.classList.add('header');
@@ -16,6 +17,7 @@ const createHeader = () => {
   return header;
 };
 
+
 const createlogo = title => {
   const h1 = document.createElement('h1');
   h1.classList.add('logo');
@@ -23,6 +25,7 @@ const createlogo = title => {
 
   return h1;
 };
+
 
 const createMain = () => {
   const main = document.createElement('main');
@@ -32,6 +35,7 @@ const createMain = () => {
   main.mainContainer = mainContainer;
   return main;
 };
+
 
 const crerateButtonsGroup = params => {
   const btnWrapper = document.createElement('div');
@@ -53,6 +57,7 @@ const crerateButtonsGroup = params => {
   };
 };
 
+
 const createTable = () => {
   const table = document.createElement('table');
   table.classList.add('table', 'table-striped');
@@ -72,6 +77,7 @@ const createTable = () => {
 
   return table;
 };
+
 
 const createForm = () => {
   const overlay = document.createElement('div');
@@ -100,6 +106,7 @@ const createForm = () => {
     </div>
   `);
 
+
   const buttonGroup = crerateButtonsGroup([
     {
       className: 'btn btn-primary mr-3',
@@ -123,6 +130,7 @@ const createForm = () => {
   };
 };
 
+
 const createFooter = () => {
   const footer = document.createElement('footer');
   footer.classList.add('footer');
@@ -141,6 +149,7 @@ const createFooterLogo = title => {
 
   return h2;
 };
+
 
 const createRow = ({name: firstName, surname, phone}) => {
   const tr = document.createElement('tr');
@@ -176,6 +185,7 @@ const createRow = ({name: firstName, surname, phone}) => {
 
   return tr;
 };
+
 
 export default {
   createContainer,
