@@ -5,7 +5,7 @@ export const createElems = () => {
 
   const userText = document.createElement('p');
   userText.classList.add('userText');
-  userText.textContent = 'text';
+  userText.textContent = '';
 
   document.body.prepend(userInput, userText);
 
@@ -15,6 +15,6 @@ export const createElems = () => {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 90vh;
     `;
 };
